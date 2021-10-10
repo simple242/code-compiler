@@ -1,0 +1,31 @@
+.header {
+  height: var(--headerHeight);
+  background-color: var(--themeColor);
+  position: sticky;
+  top: var(--menuHeight);
+  z-index: 2000;
+  box-shadow: var(--boxShadow);
+
+  &__content {
+    height: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    font-size: 21px;
+    margin-top: -1.5px;
+    white-space: nowrap;
+    color: var(--whiteColor);
+  }
+}
+
+.logo {
+  width: 65px;
+  display: flex;
+  align-items: center;
+
+  &__img {
+    width: 60%;
+  }
+}

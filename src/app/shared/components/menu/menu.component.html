@@ -1,0 +1,15 @@
+<div class="menu textNotSelect">
+  <div class="menu__dragable"></div>
+  <div class="menu__items">
+    <div class="menu__item" (click)="minimizeApp()">
+      <img class="menu__img" style="width: 14px;" src="assets/icons/menu/restore.svg" alt="restore">
+    </div>
+    <div class="menu__item" (click)="maximizeRestoreApp()">
+      <img class="menu__img" src="assets/icons/menu/maximize.svg" alt="maximize" #maximize>
+      <img class="menu__img" style="display: none;" src="assets/icons/menu/minimize.svg" alt="minimize" #minimize>
+    </div>
+    <div class="menu__item" (click)="closeApp()">
+      <img class="menu__img" src="assets/icons/menu/close.svg" alt="restore">
+    </div>
+  </div>
+</div>

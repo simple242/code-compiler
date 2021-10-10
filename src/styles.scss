@@ -1,0 +1,154 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --menuHeight: 25px;
+  --headerHeight: 50px;
+  --themeColor: #3949ab;
+  --boxShadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+  --whiteColor: #fff;
+  --bgColor: #fafafa;
+  --borderColor: #e0e0e0;
+  --black: #1a2e38;
+  --sandBoxWidth: 750px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.mat-body p, .mat-body-1 p, .mat-typography p {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--bgColor);
+  color: var(--black);
+}
+
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+@mixin textNotSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin noDrag {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+img {
+  @include noDrag;
+}
+
+.textNotSelect {
+  @include textNotSelect;
+}
+
+.flex {
+  &-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-horizontalLeft {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &-vertical {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.icon {
+  &-info {
+    width: 20px;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+.alert {
+  overflow: hidden;
+  max-width: var(--sandBoxWidth);
+  margin: 0 auto;
+
+  &__content {
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: #842029;
+    background-color: #f8d7da;
+    border: 1px solid #f5c2c7;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+}
+
+.searchInput {
+  & .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    margin-top: 5px !important;
+  }
+}
+
+.selectLanguage {
+  &__btn {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 65px;
+  }
+
+  &__menu {
+    max-width: none !important;
+    min-width: auto !important;
+
+    & img {
+      display: block;
+      height: 35px;
+    }
+  }
+
+  & .cdk-overlay-connected-position-bounding-box {
+    height: auto !important;
+    width: auto !important;
+  }
+
+  &__img {
+    height: 35px;
+  }
+
+}

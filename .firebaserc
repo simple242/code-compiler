@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "code-compiler-9bc31": {
+      "hosting": {
+        "code-compiler": [
+          "code-compiler-9bc31"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.menu {
+  --itemWidth: 35px;
+
+  width: 100%;
+  height: var(--menuHeight);
+  background: #303c84;
+  z-index: 3000;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+
+  &__dragable {
+    width: 100%;
+    height: 100%;
+    -webkit-app-region: drag !important;
+  }
+
+  &__items {
+    width: calc(var(--itemWidth) * 3);
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__item {
+    width: var(--itemWidth);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color .5s;
+
+    &:hover {
+      background-color: #33429a;
+    }
+  }
+
+  &__img {
+    height: 14px;
+  }
+}

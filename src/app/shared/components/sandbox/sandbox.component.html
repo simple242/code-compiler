@@ -1,0 +1,93 @@
+<div class="alert" *ngIf="!isOnline" [@alert]>
+  <div class="alert__content flex-center">
+    <p>{{'COMPILER.CONNECTION_ERROR' | translate}}</p>
+  </div>
+</div>
+
+<div class="sandBox">
+  <div class="sandBox__area">
+    <h3 class="sandBox__title sandBox__title-first textNotSelect flex-horizontal">
+      {{'COMPILER.WRITE_CODE' | translate}}
+      <div
+        class="searchInput"
+        [style.visibility]="showCompilerLangList ? 'initial': 'hidden'"
+      >
+        <mat-form-field class="searchInput__field" *ngIf="autocompleteControl">
+          <mat-label>{{'COMPILER.PROGRAMMING_LANGUAGE' | translate}}</mat-label>
+          <input
+            type="text"
+            placeholder=""
+            matInput
+            [formControl]="autocompleteControl"
+            [matAutocomplete]="auto"
+            (input)="searchCompilerLang($event)"
+            (blur)="unfocusLangInput()"
+          >
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option
+              *ngFor="let lang of filteredCompilerLang" [value]="lang?.name"
+              (onSelectionChange)="changeCompilerLang($event, lang)"
+            >
+              {{lang?.name}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+    </h3>
+    <textarea
+      (input)="inputDataEvent($event)"
+      class="sandBox__field sandBox__field-big"
+      #inputDataRef
+      [value]="inputData"
+    ></textarea>
+  </div>
+  <div class="sandBox__area">
+    <h3 class="sandBox__title sandBox__title-tooltip textNotSelect">
+      {{'COMPILER.INPUT_DATA' | translate}}
+      <img
+        class="icon icon-info"
+        src="assets/icons/info.svg"
+        alt="Info"
+        #tooltipRef
+      >
+      <span style="position: relative;">
+        <div
+          class="tooltip flex-horizontalLeft"
+          *ngIf="isShowTooltip"
+          [@tooltip]
+          [ngClass]="{
+              'tooltip-small': localizeService.currentLang === 'en',
+              'tooltip-big': localizeService.currentLang === 'ru' || localizeService.currentLang === 'uk'
+            }"
+        >
+          <div class="triangle triangle-left"></div>
+          <div
+            class="tooltip__body"
+          >
+            <p class="tooltip__text">{{'TOOLTIP.INPUT_TEXT' | translate}}</p>
+          </div>
+        </div>
+      </span>
+    </h3>
+    <textarea
+      (input)="inputSubDataEvent($event)"
+      class="sandBox__field sandBox__field-small"
+      #inputSubDataRef
+      [value]="inputSubData"
+    ></textarea>
+  </div>
+  <button
+    mat-button
+    type="button"
+    (click)="submit()"
+    class="sandBox__btn textNotSelect"
+    [disabled]="formInvalid"
+  >
+    {{'COMPILER.COMPILE_BTN' | translate}}
+  </button>
+  <div class="separator"></div>
+  <div class="sandBox__area">
+    <h3 class="sandBox__title textNotSelect">{{'COMPILER.RESULT' | translate}}</h3>
+    <textarea class="sandBox__field" disabled #outputDataRef></textarea>
+  </div>
+</div>

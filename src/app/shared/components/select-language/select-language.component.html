@@ -1,0 +1,33 @@
+<div class="selectLanguage">
+  <button
+    class="selectLanguage__btn"
+    mat-button
+    [matMenuTriggerFor]="menu"
+    (menuOpened)="menuOpened()"
+    (menuClosed)="menuClosed()"
+  >
+    <img class="selectLanguage__img" [hidden]="localizeService.currentLang !== 'uk'" src="assets/icons/flags/ua.svg" alt="Ukraine">
+    <img class="selectLanguage__img" [hidden]="localizeService.currentLang !== 'en'" src="assets/icons/flags/uk.svg" alt="Greate Britan">
+    <img class="selectLanguage__img" [hidden]="localizeService.currentLang !== 'ru'" src="assets/icons/flags/ru.png" alt="Russia">
+  </button>
+  <mat-menu
+    class="selectLanguage__menu"
+    #menu="matMenu"
+  >
+    <button
+      mat-menu-item
+      class="selectLanguage__item"
+      (click)="setCurrentLanguage('uk')"
+    ><img src="assets/icons/flags/ua.svg" alt="Ukraine"></button>
+    <button
+      mat-menu-item
+      class="selectLanguage__item"
+      (click)="setCurrentLanguage('en')"
+    ><img src="assets/icons/flags/uk.svg" alt="Greate Britan"></button>
+    <button
+      mat-menu-item
+      class="selectLanguage__item"
+      (click)="setCurrentLanguage('ru')"
+    ><img src="assets/icons/flags/ru.png" alt="Russia"></button>
+  </mat-menu>
+</div>

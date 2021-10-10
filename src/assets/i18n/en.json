@@ -1,0 +1,13 @@
+{
+  "COMPILER": {
+    "WRITE_CODE": "Enter the code",
+    "INPUT_DATA": "Input data",
+    "COMPILE_BTN": "Compilation",
+    "RESULT": "Result",
+    "CONNECTION_ERROR": "You must have network access for the compiler to work!",
+    "PROGRAMMING_LANGUAGE": "A programming language"
+  },
+  "TOOLTIP": {
+    "INPUT_TEXT": "Enter the data to be read from the keyboard (if any)."
+  }
+}

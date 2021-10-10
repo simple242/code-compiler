@@ -1,0 +1,139 @@
+:host {
+  --margin: 20px;
+
+  display: block;
+  max-width: var(--sandBoxWidth);
+  margin: var(--margin) auto 0;
+  padding-bottom: 20px;
+}
+
+.sandBox {
+  padding: var(--margin);
+  box-sizing: border-box;
+  background-color: var(--whiteColor);
+  border: 1px solid var(--borderColor);
+  box-shadow: var(--boxShadow);
+
+  &__area {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 20px;
+    margin: 10px 0;
+
+    &-first {
+      margin-bottom: 0;
+      margin-top: calc(var(--margin) * -1);
+    }
+
+    &-tooltip {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    height: 200px;
+    resize: none;
+    border: 1px solid #919191;
+    border-radius: 3px;
+
+    &-big {
+      height: 300px;
+    }
+
+    &-small {
+      height: 70px;
+    }
+
+  }
+
+  &__btn {
+    display: block;
+    width: 200px;
+    height: 40px;
+    margin: var(--margin) auto;
+    background-color: var(--themeColor);
+    color: var(--whiteColor);
+    font-size: 18px;
+    box-shadow: var(--boxShadow);
+
+    &:disabled, &[disabled] {
+      background-color: #e0e0e0;
+      box-shadow: none;
+    }
+  }
+
+}
+
+.tooltip {
+  position: absolute;
+  left: 0;
+
+  &-small {
+    --height: 66px;
+    margin-top: calc(var(--height) / 2 * -1);
+
+    & .tooltip__body {
+      height: var(--height);
+      width: 255px;
+    }
+  }
+
+  &-big {
+    --height: 93px;
+    margin-top: calc(var(--height) / 2 * -1);
+
+    & .tooltip__body {
+      height: var(--height);
+      width: 280px;
+    }
+  }
+
+  &__body {
+    border-radius: 3px;
+    background-color: var(--black);
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  &__text {
+    color: var(--whiteColor);
+    font-size: 16px;
+    text-align: center;
+  }
+
+  & .triangle {
+    &-left {
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-right: 20px solid var(--black);
+      border-bottom: 8px solid transparent;
+    }
+  }
+}
+
+.separator {
+  width: calc(100% + var(--margin) * 2);
+  margin-left: calc(var(--margin) * -1);
+  height: 1px;
+  border-top: 1px solid var(--borderColor);
+}
+
+.searchInput {
+  &__field {
+    width: 240px;
+  }
+
+  & input {
+    text-overflow: ellipsis;
+  }
+}
